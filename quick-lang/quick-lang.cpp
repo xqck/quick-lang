@@ -6,6 +6,7 @@
 
 void InitiateTranslator();
 void FormatSource(std::string sourceCode);
+void SourceAnalyser(std::vector<std::vector<std::string>> lineWords);
 
 int main()
 {
@@ -34,4 +35,9 @@ void FormatSource(std::string sourceCode) { // Formats the code so that it is ea
         std::vector<std::string> words = SplitString(lines[i], ' ');
         wordsEachLine.push_back(words);
     }
+    SourceAnalyser(wordsEachLine);
+}
+
+void SourceAnalyser(std::vector<std::vector<std::string>> lineWords) {
+
 }
