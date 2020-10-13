@@ -23,7 +23,7 @@ void InitiateTranslator() {
 
     // Soon going to add more important keywords.
 
-    FormatSource("string kev : \" person \";"); // this will contain the source code, currently going to have dummy code to debug with.
+    FormatSource("string kev : persons;"); // this will contain the source code, currently going to have dummy code to debug with.
 }
 
 void FormatSource(std::string sourceCode) { // Formats the code so that it is easier to process later.
@@ -39,5 +39,11 @@ void FormatSource(std::string sourceCode) { // Formats the code so that it is ea
 }
 
 void SourceAnalyser(std::vector<std::vector<std::string>> lineWords) {
-
+    for (size_t i = 0; i < lineWords.size(); i++) // for debugging purposes.
+    {
+        for (size_t i2 = 0; i2 < lineWords[i].size(); i2++)
+        {
+            wl(lineWords[i][i2]);
+        }
+    }
 }

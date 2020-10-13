@@ -1,0 +1,2 @@
+D:\C++\quick-lang-git\quick-lang\quick-lang\Debug\quick-lang.exe
+D:\C++\quick-lang-git\quick-lang\quick-lang\Debug\quick-lang.pdb
