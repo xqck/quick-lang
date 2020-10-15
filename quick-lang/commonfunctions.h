@@ -21,4 +21,14 @@ std::vector<std::string> SplitString(std::string stringToSplit, char splitChar) 
 	}
 
 	return result;
-}		
+}
+
+std::string CheckIfInVector(std::string value, std::vector<std::string> scanVector) {
+	for (size_t i = 0; i < scanVector.size(); i++)
+	{
+		if (value == scanVector[i]) {
+			return scanVector[i];
+		}
+	}
+	return NULL;
+}
