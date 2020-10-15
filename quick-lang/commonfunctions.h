@@ -15,5 +15,11 @@ std::vector<std::string> SplitString(std::string stringToSplit, char splitChar) 
 		}
 	}
 
+	if (bufferString != "") {
+		result.push_back(bufferString);
+		
+	}
+
+	ZeroMemory(&bufferString, bufferString.size());
 	return result;
-}
+}		
