@@ -20,6 +20,5 @@ std::vector<std::string> SplitString(std::string stringToSplit, char splitChar) 
 		
 	}
 
-	ZeroMemory(&bufferString, bufferString.size());
 	return result;
 }		
