@@ -30,5 +30,9 @@ std::string CheckIfInVector(std::string value, std::vector<std::string> scanVect
 			return scanVector[i];
 		}
 	}
-	return NULL;
+	return "";
+}
+
+void Error() { // I will make this close the translator
+
 }
