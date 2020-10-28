@@ -15,12 +15,13 @@ int main()
 }
 
 void FinishedTranslation() {
-    wl("$$Finished Program Translation");
+    wl("$$Finished Program Translation \n");
     for (size_t i = 0; i < globalVariables.size(); i++)
     {
-        wl("var " << i << ":");
-        wl("type " << globalVariables[i][0]);
-        wl("name " << globalVariables[i][1]);
+        wl("---> var " << i << ":");
+        wl("->type  : " << globalVariables[i][0]);
+        wl("->name  : " << globalVariables[i][1]);
+        wl("->value : " << globalVariables[i][2] << "\n");
     }
     wl("$$Ending Translator.");
 }
@@ -37,7 +38,7 @@ void InitiateTranslator() {
     keywords.push_back(";");
     // Soon going to add more important keywords.
 
-    FormatSource("  string kev : a;"); // this will contain the source code, currently going to have dummy code to debug with.
+    FormatSource("int sizeOfUrMum : 100;"); // this will contain the source code, currently going to have dummy code to debug with.
 }
 
 void FormatSource(std::string sourceCode) { // Formats the code so that it is easier to process later.
@@ -61,6 +62,9 @@ void FormatSource(std::string sourceCode) { // Formats the code so that it is ea
     SourceAnalyser(lines, wordsEachLine);
 }
 
+
+// lines = vector with each index being a line
+// lineWords = vector with each index being an individual words in a line
 void SourceAnalyser(std::vector<std::string> lines, std::vector<std::vector<std::string>> lineWords) {
     for (size_t eachLine = 0; eachLine < lineWords.size(); eachLine++) // currently work in progress.
     {
@@ -91,6 +95,13 @@ void SourceAnalyser(std::vector<std::string> lines, std::vector<std::vector<std:
                                 variableMetaData.push_back(containVariableDeclaration); // Passes the variable datatype
                                 variableMetaData.push_back(varName); // Passes the variable name
                                 // Working on the variable value.
+
+                                if (lineWords[eachLine][location + 1] == lineWords[eachLine][lineWords[eachLine].size() - 1]) { // Checks if the value of the value infront of the declarer is the same as the end of line - 1 is which is how you declare variables.
+                                    variableMetaData.push_back(lineWords[eachLine][location + 1]);
+                                }
+                                else {
+                                    wl("error0");
+                                }
 
 
                                 globalVariables.push_back(variableMetaData); // Pushes the metadata into the global variable list
