@@ -15,7 +15,7 @@
 std::vector<std::string> dataTypes;
 std::vector<std::string> keywords;
 
-std::vector<std::vector<std::string, std::string>> globalVariables;
+std::vector<std::vector<std::string>> globalVariables;
 
 // headers that I created.
 #include "commonfunctions.h"

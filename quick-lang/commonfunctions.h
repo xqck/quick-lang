@@ -33,6 +33,27 @@ std::string CheckIfInVector(std::string value, std::vector<std::string> scanVect
 	return "";
 }
 
-void Error() { // I will make this close the translator
+int CharacterCount(std::string countString, char targetChar) {
+	int amount = 0;
+	for (size_t i = 0; i < countString.size(); i++)
+	{
+		if (countString[i] == targetChar) {
+			amount++;
+		}
+	}
+	return amount;
+}
 
+int FindIndexInVector(std::vector<std::string> indexVector, std::string searchString) {
+	for (size_t i = 0; i < indexVector.size(); i++)
+	{
+		if (indexVector[i] == searchString) {
+			return i;
+		}
+	}
+	return 0;
+}
+
+void Error() { // I will make this close the translator
+	wl("hold up");
 }
